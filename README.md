@@ -256,6 +256,16 @@ var format = '(##)-00-###-##';
 casual.numerify(format); // '(10)-00-843-32'
 ```
 
+#### randify
+
+Replace all `#` in string with digits
+
+```javascript
+var format = '###-#####';
+casual.randify(format); // '01Q-3Y7x3'
+casual.randify(format, ["?", "%"]); // '01%-3Y?x3'
+```
+
 #### define
 
 [See custom generators](#define-custom-generators)
