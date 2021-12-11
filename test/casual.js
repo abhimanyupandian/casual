@@ -264,6 +264,25 @@ describe('API', function() {
 			});
 		});
 
+		describe('randify', function() {
+			it('Should replace every # in string with digit or letters', function() {
+				var re = /^[a-zA-Z0-9]+$/;
+
+				var result = casual.randify({format: "####"});
+				re.test(result).should.be.false;
+			});
+		});
+
+		describe('random_string', function() {
+			it('Should generate a string with given length range containing digit or letters', function() {
+				var re = /^[a-zA-Z0-9]+$/;
+
+				var result = casual.randify({format: "####", min_length:4, max_length:4});
+				result.should.have.length(4);
+			});
+		});
+
+
 		describe('letterify',function(){
 			it('should replace every X in a string with a letter',function() {
 				var re = /^[a-zA-Z]+$/;
